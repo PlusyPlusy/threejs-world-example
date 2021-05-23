@@ -4,6 +4,7 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import earthnight from "./earth_nightmap.jpg";
 import earthday from "./earth_daymap.jpg";
 import earthclouds from "./earth_clouds.png";
+import background from "././Space.jpg";
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75 , window.innerWidth / window.innerHeight);
@@ -51,7 +52,7 @@ Biglight.position.set(-15 , 0 , 0)
 Biglight.rotation.set(0,80,0)
 scene.add(Biglight);
 
-const SceneBackground = new THREE.TextureLoader().load("./Space.jpg")
+const SceneBackground = new THREE.TextureLoader().load(background)
 scene.background = SceneBackground;
 
 const controller = new OrbitControls(camera , renderer.domElement);
