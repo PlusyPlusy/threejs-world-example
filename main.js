@@ -1,6 +1,9 @@
 import './style.css'
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import earthnight from "./earth_nightmap.jpg";
+import earthday from "./earth_daymap.jpg";
+import earthclouds from "./earth_clouds.png";
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75 , window.innerWidth / window.innerHeight);
@@ -12,8 +15,8 @@ renderer.setSize(window.innerWidth,window.innerHeight);
 camera.position.setZ(30);
 
 
-const EarthTextureNight = new THREE.TextureLoader().load("earth_nightmap.jpg");
-const EarthTextureDay = new THREE.TextureLoader().load("earth_daymap.jpg");
+const EarthTextureNight = new THREE.TextureLoader().load(earthnight);
+const EarthTextureDay = new THREE.TextureLoader().load(earthday);
 const EarthGeometry = new THREE.SphereGeometry(5 , 32 , 32);
 const EarthMaterial = new THREE.MeshStandardMaterial({
   color: 0xffffff,
@@ -24,7 +27,7 @@ scene.add(Earth);
 
 
 
-const EarthCloudTexture = new THREE.TextureLoader().load("earth_clouds.png")
+const EarthCloudTexture = new THREE.TextureLoader().load(earthclouds)
 const EarthCloudGeometry = new THREE.SphereGeometry(5.1,32,32)
 const EarthCloudMaterial = new THREE.MeshStandardMaterial({
   map: EarthCloudTexture,
